@@ -9,8 +9,6 @@ class Resource {
    * * @param {String} type The resource type. Ex: products, customers, etc
    */
   constructor(tenantid, type) {
-    console.log("TENANT ID: ", tenantid);
-    console.log("TYPE: ", type);
     this.tenantid = tenantid;
     this.type = type;
   }
@@ -21,7 +19,6 @@ class Resource {
    * @returns {Promise} The result of the API request
    */
   all(query) {
-    console.log("TENANT ID AGAIN: ", this.tenantid);
     return axios.get(`/${this.tenantid}/${this.type}`, query);
   }
 
