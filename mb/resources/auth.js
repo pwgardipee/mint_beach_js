@@ -28,6 +28,14 @@ class Auth extends resourceModel {
   }
 
   /**
+   * Function to trade in a user's accessToken for a user object
+   * @returns {Promise} The result of the API request
+   */
+  me() {
+    return axios.post(`${this.tenantid}/auth/me`);
+  }
+
+  /**
    * Function to register a new user
    * @param {String} email The user's email
    * @param {String} password The user's password
