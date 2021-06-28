@@ -17,7 +17,7 @@ class Resource {
    * @returns {Promise} The result of the API request
    */
   all(query) {
-    return axios.get(`/${this.type}`, query);
+    return axios.get(`/${this.type}`, { params: query });
   }
 
   /**
