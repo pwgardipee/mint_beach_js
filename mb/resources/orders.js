@@ -8,6 +8,17 @@ class Orders extends resourceModel {
    */
   constructor(tenantid) {
     super(tenantid, "orders");
+    this.tenantid = tenantid;
+  }
+
+  /**
+   * Function to execute a payment on an existing order
+   * @param {String} id The order's id
+   * @param {String} payload Any information related to payment(shipping, billing, etc)
+   * @returns {Promise} The result of the API request
+   */
+  pay(id, payload) {
+    return axios.post(`${this.tenantid}/orders/pay/${id}`, payload);
   }
 }
 
