@@ -1,6 +1,6 @@
 {
   "name": "mint_beach_js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A JavaScript SDK used to interact with the Mint Beach API.",
   "main": "index.js",
   "scripts": {
