@@ -8,6 +8,7 @@ const Products = require("./resources/products");
 const Skus = require("./resources/skus");
 const Users = require("./resources/users");
 const Charges = require("./resources/charges");
+const Labels = require("./resources/labels");
 
 const mb = function (originTenantId, targetTenantId) {
   //Set tenantid on all mb requests
@@ -25,6 +26,7 @@ const mb = function (originTenantId, targetTenantId) {
     skus: new Skus(targetTenantId),
     users: new Users(targetTenantId),
     charges: new Charges(targetTenantId),
+    labels: new Labels(targetTenantId),
   };
 };
 
