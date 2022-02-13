@@ -23,6 +23,29 @@ class Orders extends resourceModel {
   pay(id, payload) {
     return axios.post(`${this.tenantid}/orders/pay/${id}`, payload);
   }
+
+  /**
+   * Function ship and order
+   * @param {String} id The order's id
+   * @param {String} payload Any information related to shipping
+   * @returns {Promise} The result of the API request
+   */
+  ship(id, payload) {
+    return axios.post(`${this.tenantid}/orders/ship/${id}`, payload);
+  }
+
+  /**
+   * Function to get shipping estimates for an order
+   * @param {String} id The order's id
+   * @param {String} payload Any information related to shipping the product
+   * @returns {Promise} The result of the API request
+   */
+  estimateShipping(id, payload) {
+    return axios.post(
+      `${this.tenantid}/orders/estimate_shipping/${id}`,
+      payload
+    );
+  }
 }
 
 module.exports = Orders;
